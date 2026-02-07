@@ -2,7 +2,6 @@
 import streamlit as st
 from groq import Groq
 
-st.write("Secrets loaded:", "GROQ_API_KEY" in st.secrets)
 
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 st.header("AI Learning Assistant 📝")
@@ -148,5 +147,6 @@ Do NOT include answers or suggestions.
         st.subheader("📊 Score Card")
 
         st.write(st.session_state.score)
+
 
 
