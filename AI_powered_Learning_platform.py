@@ -1,9 +1,8 @@
 # AI-powered Learning platform
 import streamlit as st
-import os
 from groq import Groq
 
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 st.header("AI Learning Assistant 📝")
 
 if "material" not in st.session_state:
@@ -147,3 +146,4 @@ Do NOT include answers or suggestions.
         st.subheader("📊 Score Card")
 
         st.write(st.session_state.score)
+
